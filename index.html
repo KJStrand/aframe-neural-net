@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    
+    <!-- Orbit Controls -->
+	  <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
+    <script src="./js/net-component.js"></script>
+    
+    <!-- Animations -->
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    
+    <!-- billboard -->
+    <script src="https://rawgit.com/blairmacintyre/aframe-look-at-billboard-component/master/dist/aframe-look-at-billboard-component.min.js"></script>
+	
+   
+  </head>
+  <body>
+    <!-- a-scene background="color:#0b182d" -->
+       <a-scene background="color:black">
+
+      <a-entity id="network-scale" scale="0.005 0.005 0.0015" position="0 1.6 0">
+        <a-entity net=""></a-entity>
+      </a-entity>
+      
+<!--   <a-entity aniline=""></a-entity> -->
+         <a-entity followline="startobj: #movingObject2; endobj: #movingObject;"></a-entity>
+         <a-entity followline="startobj: #movingObject3; endobj: #movingObject4;"></a-entity>
+
+         
+         <a-box id="movingObject" scale="0.1 0.1 0.1" color="red"
+           animation="property: position; dir: alternate; dur: 10000; easing: easeInSine; loop: true; to: 0 0 -3">
+         </a-box>
+         
+         <a-box id="movingObject2" position="0 1 0" scale="0.1 0.1 0.1" color="red"
+           animation="property: position; dir: alternate; dur: 20000; easing: easeInSine; loop: true; to: 0 0 -3">
+         </a-box>
+         
+         <a-entity position = "-2 0 0">
+           <a-box id="movingObject4" scale="0.3 0.3 0.3"
+             animation="property: position; dir: alternate; dur: 3000; easing: easeInSine; loop: true; to: 0 0 -3">
+           </a-box>
+
+           <a-box id="movingObject3" position="0 1 0" scale="0.3 0.3 0.3"
+             animation="property: position; dir: alternate; dur: 10000; easing: easeInSine; loop: true; to: 0 0 -3">
+           </a-box>
+         </a-entity>
+         
+              
+         
+<!--     <a-entity line__conv1="start:0.05 0.45 0;end:0 0.02 -0.9;color:#f4b342"
+              line__conv2="start:0.05 0.35 0;end:0 0.02 -0.9;color:#f4b342"
+              line__conv3="start:-0.05 0.35 0;end:0 0.02 -0.9;color:#f4b342"
+              line__conv4="start:-0.05 0.45 0;end:0 0.02 -0.9;color:#f4b342"></a-entity>
+       -->
+<!--       <a-camera wasd-controls-enabled="false" id="camera" orbit-controls="target: 0 -0.3 -1.0; minDistance: 0.0; maxDistance: 180; initialPosition: 0 0 0; enableKeys: false; rotateSpeed: 0.2; panSpeed: 1; zoomSpeed: 1;"></a-camera> -->
+        
+      
+      </a-scene>
+  </body>
+</html>
